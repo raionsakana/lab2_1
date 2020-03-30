@@ -46,7 +46,6 @@ public class SearchResult {
 
     @Override
     public String toString() {
-
         return isFound() ? "( element at position " + position + ")" : "element not found";
     }
 }
