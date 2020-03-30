@@ -98,6 +98,14 @@ class BinarySearchTest {
         assertEquals(numberSought, negativeSeq[searchResult.getPosition()]);
     }
 
+    @Test
+    void searchElementInNegativeToPositiveSequence() {
+        int numberSought = 7, position = 3;
+        SearchResult searchResult = binarySearch.search(numberSought, negativeToPositiveSeq);
 
+        assertTrue(searchResult.isFound());
+        assertEquals(position, searchResult.getPosition());
+        assertEquals(numberSought, negativeToPositiveSeq[searchResult.getPosition()]);
+    }
 
 }
