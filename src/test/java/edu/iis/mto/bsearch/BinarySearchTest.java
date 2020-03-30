@@ -14,6 +14,7 @@ class BinarySearchTest {
     private int [] negativeSeq = {-21, -9, -2};
     private int [] negativeToPositiveSeq = {-21, -9, 2, 7, 11};
     private int [] seq = {1, 3, 5, 6, 10, 27, 45};
+    private int [] unsortedSeq = {5, 6, 1, 4, 10, 27, 0};
     private BinarySearch binarySearch = BinarySearch.create();
 
     @Test
@@ -108,6 +109,15 @@ class BinarySearchTest {
         assertThat(searchResult.isFound(), is(true));
         assertThat(searchResult.getPosition(), equalTo(position));
         assertThat(negativeToPositiveSeq[searchResult.getPosition()], equalTo(numberSought));
+    }
+
+    @Test
+    void searchElementInUnsortedSequence() {
+        int numberSought = 0, position = 6;
+        SearchResult searchResult = binarySearch.search(numberSought, unsortedSeq);
+
+        assertThat(searchResult.isFound(), is(not(true)));
+        assertThat(searchResult.getPosition(), not(equalTo(position)));
     }
 
 }
