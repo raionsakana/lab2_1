@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BinarySearchTest {
 
+    private int [] emptySeq = {};
     private int [] oneElementSeq = {72};
     private int [] seq = {1, 3, 5, 6, 10, 27, 45};
     private BinarySearch binarySearch = BinarySearch.create();
@@ -67,6 +68,14 @@ class BinarySearchTest {
 
         assertFalse(searchResult.isFound());
         assertEquals(position, searchResult.getPosition());
+    }
+
+    @Test()
+    void searchElementInEmptySequence() {
+        int numberSought = 2;
+        assertThrows(IllegalArgumentException.class, () -> {
+            binarySearch.search(numberSought, emptySeq);
+        });
     }
 
 }
