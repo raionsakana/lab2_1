@@ -31,7 +31,7 @@ class BinarySearchTest {
     }
 
     @Test
-    void searchElementInSequenceWhenElementIsPresentOneFirstPosition() {
+    void searchElementInSequenceWhenElementIsPresentOnFirstPosition() {
         int numberSought = 1, position = 0;
         SearchResult searchResult = binarySearch.search(numberSought, seq);
 
@@ -41,7 +41,7 @@ class BinarySearchTest {
     }
 
     @Test
-    void searchElementInSequenceWhenElementIsPresentOneLastPosition() {
+    void searchElementInSequenceWhenElementIsPresentOnLastPosition() {
         int numberSought = 45, position = seq.length - 1;
         SearchResult searchResult = binarySearch.search(numberSought, seq);
 
