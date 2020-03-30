@@ -9,6 +9,8 @@ class BinarySearchTest {
 
     private int [] emptySeq = {};
     private int [] oneElementSeq = {72};
+    private int [] negativeSeq = {-21, -9, -2};
+    private int [] negativeToPositiveSeq = {-21, -9, 2, 7, 11};
     private int [] seq = {1, 3, 5, 6, 10, 27, 45};
     private BinarySearch binarySearch = BinarySearch.create();
 
@@ -85,6 +87,17 @@ class BinarySearchTest {
             binarySearch.search(numberSought, null);
         });
     }
+
+    @Test
+    void searchElementInNegativeSequence() {
+        int numberSought = -9, position = 1;
+        SearchResult searchResult = binarySearch.search(numberSought, negativeSeq);
+
+        assertTrue(searchResult.isFound());
+        assertEquals(position, searchResult.getPosition());
+        assertEquals(numberSought, negativeSeq[searchResult.getPosition()]);
+    }
+
 
 
 }
