@@ -50,4 +50,14 @@ class BinarySearchTest {
         assertEquals(numberSought, seq[searchResult.getPosition()]);
     }
 
+    @Test
+    void searchElementInSequenceWhenElementIsPresentOnCenterPosition() {
+        int numberSought = 6, position = (seq.length - 1) / 2;
+        SearchResult searchResult = binarySearch.search(numberSought, seq);
+
+        assertTrue(searchResult.isFound());
+        assertEquals(position, searchResult.getPosition());
+        assertEquals(numberSought, seq[searchResult.getPosition()]);
+    }
+
 }
