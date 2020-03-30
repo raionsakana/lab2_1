@@ -60,4 +60,13 @@ class BinarySearchTest {
         assertEquals(numberSought, seq[searchResult.getPosition()]);
     }
 
+    @Test
+    void searchElementInSequenceWhenElementIsNotPresent() {
+        int numberSought = 111, position = -1;
+        SearchResult searchResult = binarySearch.search(numberSought, seq);
+
+        assertFalse(searchResult.isFound());
+        assertEquals(position, searchResult.getPosition());
+    }
+
 }
