@@ -40,4 +40,14 @@ class BinarySearchTest {
         assertEquals(numberSought, seq[searchResult.getPosition()]);
     }
 
+    @Test
+    void searchElementInSequenceWhenElementIsPresentOneLastPosition() {
+        int numberSought = 45, position = seq.length - 1;
+        SearchResult searchResult = binarySearch.search(numberSought, seq);
+
+        assertTrue(searchResult.isFound());
+        assertEquals(position, searchResult.getPosition());
+        assertEquals(numberSought, seq[searchResult.getPosition()]);
+    }
+
 }
