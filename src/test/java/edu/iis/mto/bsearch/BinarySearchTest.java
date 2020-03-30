@@ -30,4 +30,14 @@ class BinarySearchTest {
         assertEquals(position, searchResult.getPosition());
     }
 
+    @Test
+    void searchElementInSequenceWhenElementIsPresentOneFirstPosition() {
+        int numberSought = 1, position = 0;
+        SearchResult searchResult = binarySearch.search(numberSought, seq);
+
+        assertTrue(searchResult.isFound());
+        assertEquals(position, searchResult.getPosition());
+        assertEquals(numberSought, seq[searchResult.getPosition()]);
+    }
+
 }
