@@ -78,4 +78,13 @@ class BinarySearchTest {
         });
     }
 
+    @Test()
+    void searchElementInNullSequence() {
+        int numberSought = 2;
+        assertThrows(IllegalArgumentException.class, () -> {
+            binarySearch.search(numberSought, null);
+        });
+    }
+
+
 }
