@@ -12,7 +12,7 @@ class BinarySearchTest {
     private BinarySearch binarySearch = BinarySearch.create();
 
     @Test
-    void search() {
+    void searchElementInOneElementSequenceWhenElementIsPresent() {
         int numberSought = 72, position = 0;
         SearchResult searchResult = binarySearch.search(numberSought, oneElementSeq);
 
