@@ -15,6 +15,7 @@ class BinarySearchTest {
     private int [] negativeToPositiveSeq = {-21, -9, 2, 7, 11};
     private int [] seq = {1, 3, 5, 6, 10, 27, 45};
     private int [] unsortedSeq = {5, 6, 1, 4, 10, 27, 0};
+    private int [] duplicatedSeq = {72, 72, 72};
     private BinarySearch binarySearch = BinarySearch.create();
 
     @Test
@@ -117,6 +118,15 @@ class BinarySearchTest {
         SearchResult searchResult = binarySearch.search(numberSought, unsortedSeq);
 
         assertThat(searchResult.isFound(), is(not(true)));
+        assertThat(searchResult.getPosition(), not(equalTo(position)));
+    }
+
+    @Test
+    void searchElementInSequenceWithDuplicates() {
+        int numberSought = 72, position = 0;
+        SearchResult searchResult = binarySearch.search(numberSought, duplicatedSeq);
+
+        assertThat(searchResult.isFound(), is(true));
         assertThat(searchResult.getPosition(), not(equalTo(position)));
     }
 
